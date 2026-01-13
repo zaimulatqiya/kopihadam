@@ -9,10 +9,10 @@ export default function Navbar() {
 
   const navItems = [
     { label: "Laman Utama", href: "/" },
-    { label: "Kisah Kami", href: "/our-story" },
-    { label: "Koleksi Produk", href: "/products" },
-    { label: "Panduan Bancuhan", href: "/brewing-guide" },
-    { label: "Hubungi Kami", href: "/contact-us" },
+    { label: "Kisah Kami", href: "/routes/our-story" },
+    { label: "Koleksi Produk", href: "/routes/products" },
+    { label: "Panduan Bancuhan", href: "/routes/brewing-guide" },
+    { label: "Hubungi Kami", href: "/routes/contact-us" },
   ];
 
   const isActive = (href: string) => pathname === href;
