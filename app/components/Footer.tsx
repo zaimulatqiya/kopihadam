@@ -10,9 +10,9 @@ export default function Footer() {
         <div className="bg-primary flex flex-col justify-center items-center text-center p-12 lg:p-20 relative overflow-hidden">
           <div className="z-10 flex flex-col items-center gap-6 max-w-md">
             <h2 className="text-4xl md:text-5xl font-light text-[#FFFBEA] tracking-tight leading-tight">
-              Make every morning <br /> <span className="font-serif italic font-bold">effortless</span>
+              Jadikan setiap pagi  <br /> <span className="font-serif italic font-bold">lebih mudah</span>
             </h2>
-            <p className="text-[#FFFBEA]/80 text-lg">Subscribe once, and never run out of fresh coffee again.</p>
+            <p className="text-[#FFFBEA]/80 text-lg">Langgan sekali, dan nikmati kopi segar tanpa henti.</p>
 
             <div className="my-8 relative w-48 h-48">
               {/* Illustration Placeholder - Using a coffee bag/cup image instead of the specific vector */}
@@ -20,7 +20,7 @@ export default function Footer() {
             </div>
 
             <button className="flex items-center gap-3 bg-[#1a1a1a] text-white px-8 py-4 rounded-full font-medium hover:scale-105 transition-transform">
-              Start my subscription <ArrowRight className="w-4 h-4" />
+              Mulakan Langganan <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
@@ -93,12 +93,12 @@ export default function Footer() {
               <ul className="flex flex-col gap-4 text-sm font-medium text-white/80">
                 <li>
                   <Link href="#" className="hover:text-white transition-colors">
-                    Privacy Policy
+                    Polisi Privasi
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="hover:text-white transition-colors">
-                    Cookie Consent
+                    Persetujuan Kuki
                   </Link>
                 </li>
               </ul>
@@ -107,8 +107,8 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div className="flex flex-col gap-6 max-w-md lg:ml-auto">
-            <h3 className="text-xl font-medium">Stories Brewed for You</h3>
-            <p className="text-white/60 text-sm leading-relaxed">Get updates on our latest coffee releases, exclusive offers, and simple brewing secrets.</p>
+            <h3 className="text-xl font-medium">Cerita Yang Diseduh Untuk Anda</h3>
+            <p className="text-white/60 text-sm leading-relaxed">Dapatkan kemas kini kopi terbaharu, tawaran eksklusif, dan rahsia bancuhan ringkas daripada kami.</p>
 
             <div className="flex flex-col gap-4 mt-2">
               <div className="relative border-b border-white/20 focus-within:border-white transition-colors">
@@ -118,7 +118,7 @@ export default function Footer() {
               <div className="flex items-start gap-3 mt-2 group cursor-pointer">
                 <div className="w-4 h-4 rounded border border-white/40 flex items-center justify-center mt-0.5 group-hover:border-white transition-colors">{/* Checkbox simulated */}</div>
                 <p className="text-xs text-white/50 leading-relaxed group-hover:text-white/80 transition-colors">
-                  I've read and agree to the <span className="text-white decoration-1 underline underline-offset-2">Privacy Policy</span>
+                  Saya telah membaca dan bersetuju dengan <span className="text-white decoration-1 underline underline-offset-2">Polisi Privasi</span>
                 </p>
               </div>
             </div>

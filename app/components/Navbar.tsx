@@ -8,11 +8,11 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const navItems = [
-    { label: "Home", href: "/" },
-    { label: "Our Story", href: "/our-story" },
-    { label: "Product Collection", href: "/products" },
-    { label: "Brewing Guide", href: "/brewing-guide" },
-    { label: "Contact Us", href: "/contact-us" },
+    { label: "Laman Utama", href: "/" },
+    { label: "Kisah Kami", href: "/our-story" },
+    { label: "Koleksi Produk", href: "/products" },
+    { label: "Panduan Bancuhan", href: "/brewing-guide" },
+    { label: "Hubungi Kami", href: "/contact-us" },
   ];
 
   const isActive = (href: string) => pathname === href;
@@ -45,8 +45,8 @@ export default function Navbar() {
       {/* Auth Buttons & Mobile Menu */}
       <div className="flex items-center gap-4">
         <div className="hidden md:flex items-center gap-3">
-          <button className="px-5 py-2 text-sm font-bold text-primary hover:bg-primary/5 rounded-full transition-colors cursor-pointer">Login</button>
-          <button className="px-5 py-2 text-sm font-bold bg-primary text-[#FFFBEA] rounded-full hover:bg-primary/90 hover:scale-105 transition-all shadow-md cursor-pointer">Register</button>
+          <button className="px-5 py-2 text-sm font-bold text-primary hover:bg-primary/5 rounded-full transition-colors cursor-pointer">Masuk</button>
+          <button className="px-5 py-2 text-sm font-bold bg-primary text-[#FFFBEA] rounded-full hover:bg-primary/90 hover:scale-105 transition-all shadow-md cursor-pointer">Daftar</button>
         </div>
 
         {/* Mobile Menu Icon */}
