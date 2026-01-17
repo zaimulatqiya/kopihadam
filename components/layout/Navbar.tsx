@@ -18,11 +18,16 @@ export default function Navbar() {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <nav className="w-full flex items-center justify-between py-6 px-6 md:px-12 bg-white sticky top-0 z-50 shadow-sm">
+    <nav className="w-full flex items-center justify-between py-3 px-6 md:px-12 bg-white sticky top-0 z-50 shadow-sm">
       {/* Logo Section */}
-      <Link href="/" className="flex flex-col items-start gap-0.5 group shrink-0">
-        <span className="text-base font-medium text-primary/80 tracking-wide ml-0.5">KOPI</span>
-        <span className="bg-primary text-[#FFFBEA] px-2 py-0.5 text-xl font-extrabold tracking-tight uppercase transform -skew-x-6 group-hover:skew-x-0 transition-transform duration-300">HADAM</span>
+      <Link href="/" className="flex items-center gap-3 group shrink-0">
+        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white border border-primary/30 rounded-xl flex items-center justify-center shadow-sm overflow-hidden group-hover:shadow-lg group-hover:border-primary group-hover:scale-110 group-hover:-rotate-3 transition-all duration-300 ease-out">
+          <img src="/assets/logo.png" alt="Logo" className="w-full h-full object-contain p-1" />
+        </div>
+        <div className="flex flex-col items-start gap-0.5">
+          <span className="text-base font-medium text-primary/80 tracking-wide ml-0.5">KOPI</span>
+          <span className="bg-primary text-[#FFFBEA] px-2 py-0.5 text-xl font-extrabold tracking-tight uppercase transform -skew-x-6 group-hover:skew-x-0 transition-transform duration-300">HADAM</span>
+        </div>
       </Link>
 
       {/* Desktop Menu */}
