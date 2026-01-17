@@ -1,7 +1,13 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Instagram, Facebook, Twitter } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Check } from "lucide-react";
 
 export default function Footer() {
+  const [isChecked, setIsChecked] = useState(false);
+
   return (
     <footer className="w-full flex flex-col">
       {/* CTA Section */}
@@ -14,14 +20,29 @@ export default function Footer() {
             </h2>
             <p className="text-[#FFFBEA]/80 text-lg">Langgan sekali, dan nikmati kopi segar tanpa henti.</p>
 
-            <div className="my-8 relative w-48 h-48">
-              {/* Illustration Placeholder - Using a coffee bag/cup image instead of the specific vector */}
-              <img src="https://cdn-icons-png.flaticon.com/512/2935/2935413.png" alt="Coffee Subscription" className="w-full h-full object-contain filter drop-shadow-xl invert opacity-90" />
-            </div>
-
-            <button className="flex items-center gap-3 bg-[#1a1a1a] text-white px-8 py-4 rounded-full font-medium hover:scale-105 transition-transform">
-              Mulakan Langganan <ArrowRight className="w-4 h-4" />
-            </button>
+            <motion.button
+              initial="initial"
+              whileHover="hover"
+              whileTap="tap"
+              variants={{
+                initial: { scale: 1 },
+                hover: { scale: 1.05 },
+                tap: { scale: 0.95 }
+              }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="flex items-center gap-3 bg-[#1a1a1a] text-white px-8 py-4 rounded-full font-medium"
+            >
+              Mulakan Langganan
+              <motion.span
+                variants={{
+                  initial: { x: 0 },
+                  hover: { x: 5 }
+                }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <ArrowRight className="w-4 h-4" />
+              </motion.span>
+            </motion.button>
           </div>
         </div>
 
@@ -32,110 +53,138 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Section */}
-      <div className="bg-[#111111] text-[#FFFBEA] px-6 py-16 md:px-12 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-24">
-          {/* Links Columns */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-16">
-            <div className="flex flex-col gap-6">
-              <h3 className="text-xs font-bold tracking-widest uppercase text-white/50">Navigation</h3>
-              <ul className="flex flex-col gap-4 text-sm font-medium text-white/80">
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Shop
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Guide
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Subscription
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div className="flex flex-col gap-6">
-              <h3 className="text-xs font-bold tracking-widest uppercase text-white/50">Social</h3>
-              <ul className="flex flex-col gap-4 text-sm font-medium text-white/80">
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Instagram
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Facebook
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    X
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div className="flex flex-col gap-6">
-              <h3 className="text-xs font-bold tracking-widest uppercase text-white/50">Information</h3>
-              <ul className="flex flex-col gap-4 text-sm font-medium text-white/80">
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Polisi Privasi
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Persetujuan Kuki
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Newsletter */}
-          <div className="flex flex-col gap-6 max-w-md lg:ml-auto">
-            <h3 className="text-xl font-medium">Cerita Yang Diseduh Untuk Anda</h3>
-            <p className="text-white/60 text-sm leading-relaxed">Dapatkan kemas kini kopi terbaharu, tawaran eksklusif, dan rahsia bancuhan ringkas daripada kami.</p>
-
-            <div className="flex flex-col gap-4 mt-2">
-              <div className="relative border-b border-white/20 focus-within:border-white transition-colors">
-                <input type="email" placeholder="Email" className="w-full bg-transparent py-3 pr-10 outline-none text-white placeholder-white/40 text-sm" />
-                <ArrowRight className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-white/60" />
+      <div className="bg-[#111111] text-[#FFFBEA] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 py-16 md:px-12 lg:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-12">
+            {/* Links Columns */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-16">
+              <div className="flex flex-col gap-6">
+                <h3 className="text-xs font-bold tracking-widest uppercase text-white/50">Navigation</h3>
+                <ul className="flex flex-col gap-4 text-sm font-medium text-white/80">
+                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-primary transition-colors">Shop</Link></motion.li>
+                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-primary transition-colors">About</Link></motion.li>
+                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-primary transition-colors">Guide</Link></motion.li>
+                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-primary transition-colors">Blog</Link></motion.li>
+                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-primary transition-colors">Subscription</Link></motion.li>
+                </ul>
               </div>
-              <div className="flex items-start gap-3 mt-2 group cursor-pointer">
-                <div className="w-4 h-4 rounded border border-white/40 flex items-center justify-center mt-0.5 group-hover:border-white transition-colors">{/* Checkbox simulated */}</div>
-                <p className="text-xs text-white/50 leading-relaxed group-hover:text-white/80 transition-colors">
-                  Saya telah membaca dan bersetuju dengan <span className="text-white decoration-1 underline underline-offset-2">Polisi Privasi</span>
-                </p>
+
+              <div className="flex flex-col gap-6">
+                <h3 className="text-xs font-bold tracking-widest uppercase text-white/50">Social</h3>
+                <ul className="flex flex-col gap-4 text-sm font-medium text-white/80">
+                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-primary transition-colors">Instagram</Link></motion.li>
+                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-primary transition-colors">Facebook</Link></motion.li>
+                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-primary transition-colors">X</Link></motion.li>
+                </ul>
+              </div>
+
+              <div className="flex flex-col gap-6">
+                <h3 className="text-xs font-bold tracking-widest uppercase text-white/50">Information</h3>
+                <ul className="flex flex-col gap-4 text-sm font-medium text-white/80">
+                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-primary transition-colors">Polisi Privasi</Link></motion.li>
+                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-primary transition-colors">Persetujuan Kuki</Link></motion.li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Newsletter */}
+            <div className="flex flex-col gap-6 max-w-md lg:ml-auto">
+              <h3 className="text-xl font-medium">Cerita Yang Diseduh Untuk Anda</h3>
+              <p className="text-white/60 text-sm leading-relaxed">Dapatkan kemas kini kopi terbaharu, tawaran eksklusif, dan rahsia bancuhan ringkas daripada kami.</p>
+
+              <div className="flex flex-col gap-4 mt-2">
+                <motion.div
+                  initial="initial"
+                  whileHover="hover"
+                  className="relative border-b border-white/20 focus-within:border-white transition-colors"
+                >
+                  <input type="email" placeholder="Email" className="w-full bg-transparent py-3 pr-10 outline-none text-white placeholder-white/40 text-sm" />
+                  <motion.div
+                    variants={{ initial: { x: 0 }, hover: { x: 5 } }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className="absolute right-0 top-1/2 -translate-y-1/2 text-white/60"
+                  >
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.div>
+                </motion.div>
+                <div
+                  className="flex items-start gap-3 mt-2 group cursor-pointer"
+                  onClick={() => setIsChecked(!isChecked)}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.1, borderColor: "#FFFFFF" }}
+                    whileTap={{ scale: 0.9 }}
+                    animate={{
+                      backgroundColor: isChecked ? "#10b981" : "transparent",
+                      borderColor: isChecked ? "#10b981" : "rgba(255, 255, 255, 0.4)"
+                    }}
+                    className="w-4 h-4 rounded border flex items-center justify-center mt-0.5 transition-colors shrink-0"
+                  >
+                    <AnimatePresence>
+                      {isChecked && (
+                        <motion.div
+                          initial={{ scale: 0, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          exit={{ scale: 0, opacity: 0 }}
+                        >
+                          <Check className="w-3 h-3 text-white" strokeWidth={3} />
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                  <p className="text-xs text-white/50 leading-relaxed group-hover:text-white/80 transition-colors select-none">
+                    Saya telah membaca dan bersetuju dengan <span className="text-white decoration-1 underline underline-offset-2">Polisi Privasi</span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Big Brand Text */}
-        <div className="border-b border-white/10 pb-8 mb-8">
-          <h1 className="text-[14vw] leading-[0.8] font-bold text-center tracking-tighter text-white select-none pointer-events-none">KOPI HADAM</h1>
-        </div>
+        {/* Animated Footer Elements - REFERENCE STYLE */}
+        <div className="relative min-h-[8rem] sm:min-h-[8rem] md:min-h-[8rem]">
 
-        {/* Copyright */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-[10px] md:text-sm text-white/30 font-medium tracking-wide uppercase gap-4">
-          <p>© 2026 | KOPI HADAM</p>
-          <div className="flex gap-8">
-            <p>Developed by</p>
-            <p>Designed by </p>
+          {/* Large background text - FIXED */}
+          <div
+            className="bg-gradient-to-b from-white/15 via-white/2 to-transparent bg-clip-text text-transparent leading-none absolute left-1/2 -translate-x-1/2 bottom-40 md:bottom-32 font-extrabold tracking-tighter pointer-events-none select-none whitespace-nowrap"
+            style={{
+              fontSize: 'clamp(3rem, 12vw, 10rem)',
+              maxWidth: '95vw'
+            }}
+          >
+            KOPI HADAM
+          </div>
+
+          {/* Bottom logo */}
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            className="absolute cursor-pointer hover:border-foreground duration-300 drop-shadow-[0_0px_20px_rgba(0,0,0,0.5)] dark:drop-shadow-[0_0px_20px_rgba(255,255,255,0.3)] bottom-24 md:bottom-20 backdrop-blur-sm rounded-3xl bg-background/60 left-1/2 border-2 border-border flex items-center justify-center p-3 -translate-x-1/2 z-10"
+          >
+            <div className="w-12 sm:w-16 md:w-24 h-12 sm:h-16 md:h-24 bg-white rounded-2xl flex items-center justify-center shadow-lg overflow-hidden">
+              <img
+                src="/assets/logo.png"
+                alt="Kopi Hadam Logo"
+                className="w-full h-full object-contain p-2"
+              />
+            </div>
+          </motion.div>
+
+          {/* Bottom line */}
+          <div className="absolute bottom-32 sm:bottom-34 backdrop-blur-sm h-1 bg-gradient-to-r from-transparent via-white/2 to-transparent w-full left-1/2 -translate-x-1/2"></div>
+
+          {/* Bottom shadow */}
+          <div className="bg-gradient-to-t from-background via-background/80 blur-[1em] to-background/40 absolute bottom-28 w-full h-24"></div>
+
+          {/* Copyright and Credits - AT THE VERY BOTTOM like reference */}
+          <div className="absolute bottom-0 left-0 right-0 flex flex-col md:flex-row items-center md:items-center justify-between gap-2 md:gap-4 px-4 md:px-12 pb-8 z-10">
+            <p className="text-[10px] md:text-base text-muted-foreground">
+              ©2026 KOPI HADAM. All rights reserved.
+            </p>
+            <p className="text-[10px] md:text-base text-muted-foreground">
+              Crafted by
+            </p>
+
           </div>
         </div>
       </div>
