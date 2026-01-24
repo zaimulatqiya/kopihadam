@@ -163,7 +163,7 @@ export default function Footer() {
           >
             <div className="w-12 sm:w-16 md:w-24 h-12 sm:h-16 md:h-24 bg-white rounded-2xl flex items-center justify-center shadow-lg overflow-hidden">
               <img
-                src="/assets/logo.png"
+                src="/assets/logo.svg"
                 alt="Kopi Hadam Logo"
                 className="w-full h-full object-contain p-2"
               />

@@ -107,7 +107,7 @@ export default function Hero() {
             <motion.div className="bg-white/10 backdrop-blur-md border border-white/10 p-5 rounded-2xl flex flex-col justify-end hover:bg-white/20 transition-colors h-32 md:h-40 xl:w-48" variants={fadeInUp} transition={{ delay: 1.2 }}>
               <div className="flex items-center gap-2 mb-2">
                 <Star className="fill-yellow-400 text-yellow-400 w-8 h-8" />
-                <span className="text-3xl font-bold text-white">4.7</span>
+                <span className="text-3xl font-bold text-white">4.8</span>
               </div>
               <div>
                 <p className="text-sm font-bold">7,010+</p>

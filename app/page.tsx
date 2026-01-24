@@ -1,4 +1,5 @@
 import Navbar from "../components/layout/Navbar";
+import HeroBlend from "../components/sections/HeroBlend";
 import Hero from "../components/sections/Hero";
 import HowItWorks from "../components/sections/HowItWorks";
 import Footer from "../components/layout/Footer";
