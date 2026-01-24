@@ -8,19 +8,19 @@ const steps = [
     id: 1,
     title: "Pilih Kopi Anda",
     description: "Terokai koleksi biji kopi premium kami yang dipilih khas dari ladang terbaik.",
-    image: "/assets/step-1.png",
+    image: "/assets/step-1.svg",
   },
   {
     id: 2,
     title: "Dipanggang Segar",
     description: "Kami memanggang setiap pesanan dalam kelompok kecil untuk menjamin aroma maksimum.",
-    image: "/assets/step-2.png",
+    image: "/assets/step-2.svg",
   },
   {
     id: 3,
     title: "Dihantar Terus",
     description: "Penghantaran pantas terus ke pintu rumah anda mengikut jadual yang anda tetapkan.",
-    image: "/assets/step-3.png",
+    image: "/assets/step-3.svg",
   },
 ];
 
