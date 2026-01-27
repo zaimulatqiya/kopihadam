@@ -82,12 +82,14 @@ const TutorialModal = ({ isOpen, onClose, guide }: { isOpen: boolean; onClose: (
                             exit={{ scale: 0.9, opacity: 0, y: 20 }}
                             className="bg-card w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden pointer-events-auto border border-primary/20"
                         >
-                            <div className="relative aspect-video bg-muted flex items-center justify-center group cursor-pointer overflow-hidden">
-                                <div className={`absolute inset-0 opacity-20 ${guide.color}`} />
-                                <div className="z-10 w-20 h-20 bg-primary/90 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                    <Play className="w-8 h-8 text-primary-foreground fill-current ml-1" />
-                                </div>
-                                <p className="absolute bottom-4 text-muted-foreground text-sm font-medium">Video Placeholder</p>
+                            <div className="relative aspect-video bg-black">
+                                <iframe
+                                    src="https://www.youtube.com/embed/An6LvWQuj_8"
+                                    title="Coffee Brewing Tutorial"
+                                    className="w-full h-full absolute inset-0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen
+                                />
                             </div>
 
                             <div className="p-6 relative">

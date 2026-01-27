@@ -114,13 +114,13 @@ const ParallaxImages = () => {
 
     return (
 
-        <div className="mx-auto max-w-5xl px-4 pt-[200px] relative z-50">
+        <div className="mx-auto max-w-5xl px-4 pt-[450px] relative z-50">
             <ParallaxImg
                 src="https://images.unsplash.com/photo-1524350876685-274059332603?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Coffee cherries on tree"
-                start={-150}
-                end={200}
-                className="w-1/3 rounded-[2.5rem] shadow-2xl grayscale-[20%] hover:grayscale-0 transition-all duration-200"
+                start={0}
+                end={-200}
+                className="w-1/3 rounded-[2.5rem] shadow-2xl hover:scale-105 transition-all duration-700 ease-out will-change-transform"
                 imgClassName="object-cover w-full h-full rounded-[2.5rem]"
             />
             <ParallaxImg
@@ -128,15 +128,15 @@ const ParallaxImages = () => {
                 alt="Kopihadam Logo"
                 start={150}
                 end={-250}
-                className="mx-auto w-[40%] hover:scale-105 transition-all duration-700 ease-out will-change-transform relative z-20"
+                className="mx-auto w-[40%] -mt-32 md:-mt-48 hover:scale-105 transition-all duration-700 ease-out will-change-transform relative z-20"
                 imgClassName="object-contain w-full h-full brightness-0 invert opacity-90 drop-shadow-sm"
             />
             <ParallaxImg
                 src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Barista pouring coffee"
-                start={-350}
-                end={200}
-                className="ml-auto w-1/3 rounded-[2.5rem] shadow-2xl grayscale-[20%] hover:grayscale-0 transition-all duration-200"
+                start={50}
+                end={-200}
+                className="ml-auto w-1/3 -mt-32 md:-mt-48 rounded-[2.5rem] shadow-2xl hover:scale-105 transition-all duration-700 ease-out will-change-transform"
                 customOpacity={heroFadeOpacity}
                 imgClassName="object-cover w-full h-full rounded-[2.5rem]"
             />
