@@ -7,7 +7,6 @@ import { FeatureSection } from "./_components/feature-section";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
-import { Sprout, Flame, PackageCheck, ArrowRight } from "lucide-react";
 
 export default function OurStory() {
   const containerRef = useRef(null);
