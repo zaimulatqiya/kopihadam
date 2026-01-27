@@ -61,11 +61,11 @@ export default function Footer() {
               <div className="flex flex-col gap-6">
                 <h3 className="text-xs font-bold tracking-widest uppercase text-white/50">Navigation</h3>
                 <ul className="flex flex-col gap-4 text-sm font-medium text-white/80">
-                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-primary transition-colors">Shop</Link></motion.li>
-                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-primary transition-colors">About</Link></motion.li>
-                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-primary transition-colors">Guide</Link></motion.li>
-                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-primary transition-colors">Blog</Link></motion.li>
-                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="#" className="hover:text-primary transition-colors">Subscription</Link></motion.li>
+                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="/" className="hover:text-primary transition-colors">Laman Utama</Link></motion.li>
+                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="/routes/our-story" className="hover:text-primary transition-colors">Kisah Kami</Link></motion.li>
+                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="/routes/products" className="hover:text-primary transition-colors">Koleksi Produk</Link></motion.li>
+                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="/routes/brewing-guide" className="hover:text-primary transition-colors">Panduan Bancuhan</Link></motion.li>
+                  <motion.li whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }}><Link href="/routes/contact-us" className="hover:text-primary transition-colors">Hubungi Kami</Link></motion.li>
                 </ul>
               </div>
 

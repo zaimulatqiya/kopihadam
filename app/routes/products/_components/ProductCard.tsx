@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Heart, ShoppingCart, Plus, Minus } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,8 +11,13 @@ import { Button } from "@/components/ui/button";
 import { products, cardVariants } from "../_data/constants";
 
 export default function ProductCard({ product }: { product: typeof products[0] }) {
+    const router = useRouter();
     const [quantity, setQuantity] = useState(1);
     const [isFavorite, setIsFavorite] = useState(false);
+
+    const handleCardClick = () => {
+        router.push(`/routes/products/${product.id}`);
+    };
 
     return (
         <motion.div
@@ -21,7 +27,10 @@ export default function ProductCard({ product }: { product: typeof products[0] }
             whileHover="hover"
             className="h-full"
         >
-            <Card className="group h-full overflow-hidden border border-border/50 hover:border-border transition-all duration-300 hover:shadow-xl gap-0 py-0 flex flex-col">
+            <Card
+                onClick={handleCardClick}
+                className="group h-full overflow-hidden border border-border/50 hover:border-border transition-all duration-300 hover:shadow-xl gap-0 py-0 flex flex-col cursor-pointer"
+            >
                 {/* Product image */}
                 <div className="relative bg-muted/30 overflow-hidden aspect-square">
                     <motion.div
@@ -38,7 +47,10 @@ export default function ProductCard({ product }: { product: typeof products[0] }
 
                     {/* Favorite button */}
                     <motion.button
-                        onClick={() => setIsFavorite(!isFavorite)}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setIsFavorite(!isFavorite);
+                        }}
                         className="absolute top-2 right-2 p-1.5 rounded-full bg-background/80 backdrop-blur-sm border border-border/50 hover:bg-background transition-colors"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -80,16 +92,22 @@ export default function ProductCard({ product }: { product: typeof products[0] }
                             </div>
 
                             {/* Quantity selector - unified design */}
-                            <div className="flex items-center gap-0 border border-border rounded-md overflow-hidden bg-background">
+                            <div className="flex items-center gap-0 border border-border rounded-md overflow-hidden bg-background" onClick={(e) => e.stopPropagation()}>
                                 <div className="flex flex-col">
                                     <button
-                                        onClick={() => setQuantity(quantity + 1)}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setQuantity(quantity + 1);
+                                        }}
                                         className="h-4 w-5 hover:bg-primary/10 transition-all flex items-center justify-center border-b border-border group active:scale-95"
                                     >
                                         <Plus className="w-2.5 h-2.5 text-muted-foreground group-hover:text-primary transition-colors" strokeWidth={3} />
                                     </button>
                                     <button
-                                        onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setQuantity(Math.max(1, quantity - 1));
+                                        }}
                                         className="h-4 w-5 hover:bg-primary/10 transition-all flex items-center justify-center group active:scale-95"
                                     >
                                         <Minus className="w-2.5 h-2.5 text-muted-foreground group-hover:text-primary transition-colors" strokeWidth={3} />
@@ -112,6 +130,7 @@ export default function ProductCard({ product }: { product: typeof products[0] }
                     <motion.div
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
+                        onClick={(e) => e.stopPropagation()}
                     >
                         <Button className="w-full gap-1.5 h-8 text-xs font-medium">
                             <ShoppingCart className="w-3.5 h-3.5" />
