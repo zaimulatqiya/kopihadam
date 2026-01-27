@@ -144,34 +144,34 @@ export default function Footer() {
         {/* Animated Footer Elements - REFERENCE STYLE */}
         <div className="relative min-h-[8rem] sm:min-h-[8rem] md:min-h-[8rem]">
 
-          {/* Large background text - FIXED */}
-          <div
-            className="bg-gradient-to-b from-white/15 via-white/2 to-transparent bg-clip-text text-transparent leading-none absolute left-1/2 -translate-x-1/2 bottom-40 md:bottom-32 font-extrabold tracking-tighter pointer-events-none select-none whitespace-nowrap"
-            style={{
-              fontSize: 'clamp(3rem, 12vw, 10rem)',
-              maxWidth: '95vw'
-            }}
-          >
-            KOPI HADAM
-          </div>
-
-          {/* Bottom logo */}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            className="absolute cursor-pointer hover:border-foreground duration-300 drop-shadow-[0_0px_20px_rgba(0,0,0,0.5)] dark:drop-shadow-[0_0px_20px_rgba(255,255,255,0.3)] bottom-24 md:bottom-20 backdrop-blur-sm rounded-3xl bg-background/60 left-1/2 border-2 border-border flex items-center justify-center p-3 -translate-x-1/2 z-10"
-          >
-            <div className="w-12 sm:w-16 md:w-24 h-12 sm:h-16 md:h-24 bg-white rounded-2xl flex items-center justify-center shadow-lg overflow-hidden">
-              <img
-                src="/assets/logo.svg"
-                alt="Kopi Hadam Logo"
-                className="w-full h-full object-contain p-2"
-              />
+          {/* Center Logo over Text Container */}
+          <div className="absolute left-1/2 -translate-x-1/2 bottom-20 md:bottom-28 grid place-items-center">
+            {/* Large background text */}
+            <div
+              className="col-start-1 row-start-1 -translate-y-4 bg-gradient-to-b from-white/15 via-white/2 to-transparent bg-clip-text text-transparent leading-none font-extrabold tracking-tighter pointer-events-none select-none whitespace-nowrap"
+              style={{
+                fontSize: 'clamp(3rem, 12vw, 10rem)',
+                maxWidth: '95vw'
+              }}
+            >
+              KOPI HADAM
             </div>
-          </motion.div>
 
-          {/* Bottom line */}
-          <div className="absolute bottom-32 sm:bottom-34 backdrop-blur-sm h-1 bg-gradient-to-r from-transparent via-white/2 to-transparent w-full left-1/2 -translate-x-1/2"></div>
+            {/* Bottom logo */}
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              className="col-start-1 row-start-1 z-10 cursor-pointer hover:border-foreground duration-300 drop-shadow-[0_0px_20px_rgba(0,0,0,0.5)] dark:drop-shadow-[0_0px_20px_rgba(255,255,255,0.3)] backdrop-blur-sm rounded-3xl bg-background/60 border-2 border-border flex items-center justify-center p-3"
+            >
+              <div className="w-12 sm:w-16 md:w-24 h-12 sm:h-16 md:h-24 bg-white rounded-2xl flex items-center justify-center shadow-lg overflow-hidden">
+                <img
+                  src="/assets/logo.svg"
+                  alt="Kopi Hadam Logo"
+                  className="w-full h-full object-contain p-2"
+                />
+              </div>
+            </motion.div>
+          </div>
 
           {/* Bottom shadow */}
           <div className="bg-gradient-to-t from-background via-background/80 blur-[1em] to-background/40 absolute bottom-28 w-full h-24"></div>
